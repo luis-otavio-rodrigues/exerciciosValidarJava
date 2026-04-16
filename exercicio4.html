@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 5%;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <h1>Digite seu CPF</h1>
+    <input type="text" id="cpf">
+    <button onclick="validar()">Validar</button><br><br><br>
+
+      <h1>Digite sua senha(pelo menos, 8 dígitos, uma letra maiúscula )</h1>
+    <input type="text" id="senha">
+    <button onclick="validar2()">Validar</button><br><br><br>
+
+
+      <h1>Validar e-mail</h1>
+    <input type="text" id="email">
+    <button onclick="validar3()">Validar</button><br><br><br>
+
+
+     <h1>Apenas números</h1>
+    <input type="text" id="sonum">
+    <button onclick="validar4()">Validar</button><br><br><br>
+
+    <script>
+        /* serve pra verificar cpf :)*/
+        function validar(){
+            let valor = document.getElementById("cpf").value;
+        let regex = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
+
+        if(regex.test(valor)){
+            alert ("CPF valido")
+        }else{
+            alert ("CPF invalido")
+        }
+        }
+           
+        
+        
+         /* Serve pra verificar senha :)*/
+        function validar2(){
+            let valor2 = document.getElementById("senha").value;
+        let regex1 = /^(?=.*[A-Z]).{8,}$/;
+
+        if(regex1.test(valor2)){
+            alert ("Senha valida")
+        }else{
+            alert ("Senha invalida")
+        }
+        }
+
+
+
+
+/* e mail */
+          function validar3(){
+            let valor3 = document.getElementById("email").value;
+        let regex2 = /^[0-9A-Za-z]+@[A-Za-z]+.com$/;
+
+        if(regex2.test(valor3)){
+            alert ("E-mail valido")
+        }else{
+            alert ("E-mail invalido")
+        }
+        }
+
+
+
+
+
+/*so numeros*/
+          function validar4(){
+            let valor4 = document.getElementById("sonum").value;
+        let regex3 = /^[0-9]+$/;
+
+        if(regex3.test(valor4)){
+            alert ("Correto")
+        }else{
+            alert ("Apenas numeros por favor ")
+        }
+        }
+
+
+
+        
+    </script>
+</body>
+</html>
